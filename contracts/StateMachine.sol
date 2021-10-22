@@ -45,7 +45,7 @@ contract StateMachine {
     
     function _transitionTo(State to) internal {
         require(to != State.PENDING, "cannot go back to PENDING state");
-        require(to != state, "caanot transition to current state");
+        require(to != state, "cannot transition to current state");
         
         if (to == State.ACTIVE) {
             require(state == State.PENDING, "can only transition to active from pending state");
